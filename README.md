@@ -1,6 +1,7 @@
 # Power CMS
 
 Simplified Next.js + API project for:
+
 - Root page (`/`)
 - Admin panel (`/admin`)
 
@@ -50,12 +51,6 @@ Development:
 npm run dev
 ```
 
-Production preview:
-
-```bash
-npm run prod
-```
-
 Direct build/start:
 
 ```bash
@@ -64,6 +59,7 @@ npm run start
 ```
 
 App URLs:
+
 - Root: `http://localhost:3000/`
 - Admin: `http://localhost:3000/admin`
 
@@ -76,12 +72,8 @@ App URLs:
 ## Authentication
 
 Initial admin credentials are read from:
+
 - `ROOT_USER_EMAIL`
 - `ROOT_USER_PASSWORD`
 
 These should be set in `api/.env.local`.
-
-## Notes
-
-- Email sending is removed from this project.
-- Contact/apply form mail template flow and related email log/template schema are removed.
