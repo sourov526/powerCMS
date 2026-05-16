@@ -1,1 +1,8 @@
 node_modules
+
+# Next.js build output
+frontend/.next/
+
+# Local env files
+frontend/.env.local
+api/.env.local
