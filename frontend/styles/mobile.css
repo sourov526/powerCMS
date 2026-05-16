@@ -1,0 +1,12 @@
+/* 2xl: 1651px+ */
+@media (max-width: 375px) {
+  .user-contact-form textarea,
+  .user-contact-form input::placeholder {
+    /* color: #b3b3b3; */
+    /* opacity: 1; */
+    font-size: 12px;
+  }
+}
+/* input:focus::placeholder {
+  opacity: 0;
+} */

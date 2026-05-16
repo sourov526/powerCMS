@@ -1,0 +1,116 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": false,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "types": [
+      "react",
+      "react-dom",
+      "next"
+    ],
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./*"
+      ],
+      "@/app/*": [
+        "./app/*"
+      ],
+      "@/components/*": [
+        "./components/*"
+      ],
+      "@/frontend/*": [
+        "./*"
+      ],
+      "@/admin/*": [
+        "../admin/*"
+      ],
+      "@/api/*": [
+        "../api/*"
+      ],
+      "@/lib/services/*": [
+        "../api/services/*"
+      ],
+      "@/lib/utils/*": [
+        "../api/utils/*"
+      ],
+      "@/lib/auth/*": [
+        "../api/utils/auth/*"
+      ],
+      "@/lib/i18n/*": [
+        "../api/utils/strings/*"
+      ],
+      "@/lib/ad-inserter": [
+        "../api/utils/ad-inserter"
+      ],
+      "@/lib/db": [
+        "../api/utils/db"
+      ],
+      "@/lib/db-cloudflare": [
+        "../api/utils/db-cloudflare"
+      ],
+      "@/lib/db-local": [
+        "../api/utils/db-local"
+      ],
+      "@/lib/geeen-tag-manager": [
+        "../api/utils/geeen-tag-manager"
+      ],
+      "@/lib/google-tag-manager": [
+        "../api/utils/google-tag-manager"
+      ],
+      "@/lib/marketing-head-scripts": [
+        "../api/utils/marketing-head-scripts"
+      ],
+      "@/lib/media": [
+        "../api/utils/media"
+      ],
+      "@/lib/meta-tags": [
+        "../api/utils/meta-tags"
+      ],
+      "@/lib/redirects": [
+        "../api/utils/redirects"
+      ],
+      "@/lib/seo": [
+        "../api/utils/seo"
+      ],
+      "@/lib/site": [
+        "../api/utils/site"
+      ],
+      "@/utils/*": [
+        "../api/utils/*"
+      ],
+      "@/db/*": [
+        "../api/db/*"
+      ]
+    }
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "../api/types/**/*.d.ts",
+    "next-env.d.ts",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

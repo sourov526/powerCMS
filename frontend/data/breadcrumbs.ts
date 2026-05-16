@@ -1,0 +1,26 @@
+export const BREADCRUMB_HOME_LABEL_KEY = "Top";
+
+export const BREADCRUMB_SEGMENT_LABEL_KEYS: Record<string, string> = {
+  company: "CompanyInformation",
+  difference: "OurStrengths",
+  message: "Message",
+  officer: "boardMembers",
+  ihara: "officer.ihara",
+  kano: "officer.kano",
+  itaya: "officer.itaya",
+  vision: "Vision",
+  category: "",
+  news: "News",
+  service: "Service",
+  sustainability: "Sustainability",
+  about: "about",
+  search: "Search",
+  "cookies-policy": "cookiesPolicy",
+  "external-transmission": "External-transmission",
+  privacy: "privacy",
+  sitemap: "sitemap",
+  contact: "contact",
+  history: "history",
+  "thanks-you": "thanks-you",
+  recruit: "recruit",
+};

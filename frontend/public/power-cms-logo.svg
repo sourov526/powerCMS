@@ -1,0 +1,7 @@
+<svg width="420" height="120" viewBox="0 0 420 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="420" height="120" rx="20" fill="#14532D"/>
+  <circle cx="60" cy="60" r="34" fill="#1D4ED8"/>
+  <path d="M62 24L40 66H58L48 96L84 48H64L78 24H62Z" fill="#FACC15"/>
+  <text x="112" y="56" fill="#E2E8F0" font-family="Arial, sans-serif" font-size="24" font-weight="700">POWER</text>
+  <text x="112" y="88" fill="#22C55E" font-family="Arial, sans-serif" font-size="24" font-weight="700">CMS</text>
+</svg>

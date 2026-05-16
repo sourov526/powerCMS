@@ -1,0 +1,13 @@
+{
+  "name": "powercms-frontend",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "next dev -p 3000 -H 127.0.0.1",
+    "build": "next build",
+    "start": "next start -p 3000 -H 127.0.0.1"
+  },
+  "devDependencies": {
+    "vercel": "^50.42.0"
+  }
+}

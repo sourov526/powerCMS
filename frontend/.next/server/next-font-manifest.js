@@ -1,0 +1,1 @@
+self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{\"/Users/sourov/personal projects/powerCMS/powerCMS/frontend/app/layout\":[\"static/media/4c0a38defdf31450-s.p.ttf\",\"static/media/9f847b9d8008b570-s.p.ttf\"]},\"appUsingSizeAdjust\":true,\"pagesUsingSizeAdjust\":false}"

@@ -1,0 +1,28 @@
+{
+  "node": {
+    "4057acfd1b6d511b83f2f17e5faff2e69a72d45dee": {
+      "workers": {
+        "app/admin/categories/page": {
+          "moduleId": "(rsc)/../node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fsourov%2Fpersonal%20projects%2FpowerCMS%2FpowerCMS%2Ffrontend%2Fapp%2Fadmin%2Fcategories%2Fpage.tsx%22%2C%5B%5B%224057acfd1b6d511b83f2f17e5faff2e69a72d45dee%22%2C%22%24%24RSC_SERVER_ACTION_1%22%5D%2C%5B%22405ddbb7680b98fa3e8c37c70abba23c6f79b4f775%22%2C%22%24%24RSC_SERVER_ACTION_0%22%5D%5D%5D%5D&__client_imported__=!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/admin/categories/page": "rsc"
+      }
+    },
+    "405ddbb7680b98fa3e8c37c70abba23c6f79b4f775": {
+      "workers": {
+        "app/admin/categories/page": {
+          "moduleId": "(rsc)/../node_modules/next/dist/build/webpack/loaders/next-flight-action-entry-loader.js?actions=%5B%5B%22%2FUsers%2Fsourov%2Fpersonal%20projects%2FpowerCMS%2FpowerCMS%2Ffrontend%2Fapp%2Fadmin%2Fcategories%2Fpage.tsx%22%2C%5B%5B%224057acfd1b6d511b83f2f17e5faff2e69a72d45dee%22%2C%22%24%24RSC_SERVER_ACTION_1%22%5D%2C%5B%22405ddbb7680b98fa3e8c37c70abba23c6f79b4f775%22%2C%22%24%24RSC_SERVER_ACTION_0%22%5D%5D%5D%5D&__client_imported__=!",
+          "async": false
+        }
+      },
+      "layer": {
+        "app/admin/categories/page": "rsc"
+      }
+    }
+  },
+  "edge": {},
+  "encryptionKey": "RM9JpNgjzn1Y2ChC/qvkC3HXni0U1rKeDW9pY2Zbbv0="
+}
