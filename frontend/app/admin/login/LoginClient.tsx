@@ -5,7 +5,6 @@ import PasswordInput from "@/components/admin/auth/PasswordInput";
 import { adminUi } from "@/app/admin/core/admin-ui";
 import { Link } from "@/navigation";
 import { mapAuthError } from "@/utils/strings/auth-errors";
-import { useTranslations } from "@/utils/strings/client";
 import { useSearchParams } from "next/navigation";
 import { Suspense, useEffect, useState } from "react";
 import Spinner from "@/components/atoms/Spinner";
@@ -34,8 +33,17 @@ export default function LoginClient() {
 
 function LoginForm() {
   const searchParams = useSearchParams();
-  const t = useTranslations("Auth.login");
-  const tErrors = useTranslations("Auth.errors");
+  const authErrorText: Record<string, string> = {
+    generic: "Something went wrong. Please try again.",
+    invalidOtp: "Invalid OTP or expired.",
+    emailPasswordRequired: "Email and password are required.",
+    invalidCredentials: "Invalid credentials.",
+    accountInactive: "Your account is not active.",
+    loginFailed: "Login temporarily unavailable.",
+    unauthorized: "Unauthorized.",
+    userNotFound: "User not found.",
+  };
+  const tErrors = (key: string) => authErrorText[key] ?? authErrorText.generic;
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
@@ -112,7 +120,7 @@ function LoginForm() {
       // Force a full navigation so the `/admin` layout is re-rendered with the new cookie.
       window.location.assign("/admin");
     } catch {
-      setMessage(tErrors("generic"));
+      setMessage(authErrorText.generic);
     } finally {
       setBusy(false);
     }
@@ -153,7 +161,7 @@ function LoginForm() {
       // Force a full navigation so the `/admin` layout is re-rendered with the new cookie.
       window.location.assign("/admin");
     } catch {
-      setMessage(tErrors("generic"));
+      setMessage(authErrorText.generic);
     } finally {
       setBusy(false);
     }
@@ -165,14 +173,14 @@ function LoginForm() {
       <main className="mx-auto w-full max-w-md px-4 py-10 sm:py-14">
         <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
           <div className="space-y-2">
-            <h1 className={adminUi.title}>{t("title")}</h1>
-            <p className={adminUi.subtitle}>{t("subtitle")}</p>
+            <h1 className={adminUi.title}>Admin Login</h1>
+            <p className={adminUi.subtitle}>Sign in to continue to the admin panel.</p>
           </div>
           {step === "password" ? (
             <form onSubmit={handleSubmit} className="mt-6 space-y-5">
               <label className="space-y-4">
                 <span className={adminUi.label}>
-                  {t("emailLabel")}
+                  Email
                   <span className="ml-1 text-rose-500">*</span>
                 </span>
                 <input
@@ -185,7 +193,7 @@ function LoginForm() {
               </label>
               <PasswordInput
                 id="login-password"
-                label={t("passwordLabel")}
+                label="Password"
                 value={password}
                 onChange={setPassword}
                 required
@@ -198,7 +206,7 @@ function LoginForm() {
                   onChange={(event) => setRememberMe(event.target.checked)}
                   className="h-4 w-4 rounded border-slate-300 text-slate-900 focus:ring-slate-300"
                 />
-                {t("rememberMe")}
+                Remember email
               </label>
               <div className="pt-2">
                 <button
@@ -208,11 +216,11 @@ function LoginForm() {
                 >
                   {busy ? (
                     <>
-                      <Spinner size={16} label={t("submitting")} />
-                      <span>{t("submitting")}</span>
+                      <Spinner size={16} label="Signing in..." />
+                      <span>Signing in...</span>
                     </>
                   ) : (
-                    <span>{t("submit")}</span>
+                    <span>Sign In</span>
                   )}
                 </button>
               </div>
@@ -220,13 +228,13 @@ function LoginForm() {
           ) : (
             <form onSubmit={handleVerifyOtp} className="mt-6 space-y-5">
               <div className="text-sm font-semibold text-rose-600">
-                {t("otpExpires")}{" "}
+                OTP expires in{" "}
                 {String(Math.floor(otpSecondsLeft / 60)).padStart(2, "0")}:
                 {String(otpSecondsLeft % 60).padStart(2, "0")}
               </div>
               <label className="space-y-4">
                 <span className={adminUi.label}>
-                  {t("otpLabel")}
+                  OTP Code
                   <span className="ml-1 text-rose-500">*</span>
                 </span>
                 <input
@@ -248,11 +256,11 @@ function LoginForm() {
                 >
                   {busy ? (
                     <>
-                      <Spinner size={16} label={t("verifying")} />
-                      <span>{t("verifying")}</span>
+                      <Spinner size={16} label="Verifying..." />
+                      <span>Verifying...</span>
                     </>
                   ) : (
-                    <span>{t("verify")}</span>
+                    <span>Verify OTP</span>
                   )}
                 </button>
               </div>
@@ -267,26 +275,26 @@ function LoginForm() {
 
           {registered ? (
             <p className="mt-5 rounded-lg bg-emerald-50 px-3 py-2 text-sm text-emerald-700">
-              {t("registeredMessage")}
+              Registration successful. Please sign in.
             </p>
           ) : null}
 
           {passwordReset ? (
             <p className="mt-5 rounded-lg bg-emerald-50 px-3 py-2 text-sm text-emerald-700">
-              {t("passwordResetMessage")}
+              Password reset successful. Please sign in.
             </p>
           ) : null}
 
           <div className="mt-7 flex flex-col gap-3 text-sm text-slate-600">
             <div>
-              {t("needAccount")}{" "}
+              Need an account?{" "}
               <Link href="/admin/register" className={adminUi.linkStrong}>
-                {t("registerLink")}
+                Register
               </Link>
             </div>
             <div>
               <Link href="/admin/forgot-password" className={adminUi.linkStrong}>
-                {t("forgotLink")}
+                Forgot password?
               </Link>
             </div>
           </div>
